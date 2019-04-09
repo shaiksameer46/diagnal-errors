@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import axios from "axios";
+import poster1 from './Slices/poster1.jpg';
 import './App.css';
-
 class App extends Component {
+
+  state = {
+    data : {},
+    text : "./Slices/poster2.jpg"
+
+  };
+
+  componentDidMount() {
+    axios.get(`./API/CONTENTLISTINGPAGE-PAGE1.json`)
+      .then(res => {
+        const data = res.data;
+        this.setState({ data });
+        this.setState({ text : this.state.data.page.contents.content[0].image})
+        console.log(this.state.text);
+      })
+  }
+
   render() {
+    
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <img src={poster1} alt="poster1.jpg"/>
     );
   }
 }
