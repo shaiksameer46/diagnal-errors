@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    data:{}
+    data:[]
   };
 
   componentDidMount() {
@@ -12,14 +12,15 @@ class App extends Component {
       .then(res => {
          const data = res.data;
         this.setState({ data : data.content });
-        console.log(this.state.data[0].image);
+        //console.log(this.state.data[0].image);
       })
   }
 
   render() {
-    console.log(this.state.data[0].image);
-    return (
-      <img src = "/Slices/Poster1.jpg" alt = "poster1" />
+    return(
+      <div>
+        {this.state.data.length ? (<img src={this.state.data[0].image} alt = {this.state.data[0].image} />) : (<img src="#" alt = "not found" />)}
+      </div>
     );
   }
 }
