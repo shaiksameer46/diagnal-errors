@@ -19,7 +19,14 @@ class App extends Component {
   render() {
     return(
       <div>
-        {this.state.data.length ? (<img src={this.state.data[0].image} alt = {this.state.data[0].image} />) : (<img src="#" alt = "not found" />)}
+        {this.state.data.length ?  
+        (this.state.data.map(pic => ( 
+          <React.Fragment>
+        <img src={pic.image} alt = {pic.image} />
+        </React.Fragment>
+        ))) : 
+        
+        (<img src="#" alt = "not found" />)}
       </div>
     );
   }
