@@ -1,11 +1,5 @@
 {
-  "page": {
-    "title": "Romantic Comedy",
-    "total-content-items" : "54",
-    "page-num-requested" : "3",
-    "page-size-requested" : "20",
-    "page-size-returned" : "14",
-    "contents": {
+  
       "content": [
         {
           "name": "Family Pot",
@@ -61,9 +55,7 @@
         },
         {
           "name": "Family Pot",
-          "image": "posterthatismissing.jpg"
+          "image": "poster6.jpg"
         }
       ]
-    }
-  }
 }
